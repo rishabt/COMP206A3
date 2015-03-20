@@ -67,10 +67,13 @@ BOOLEAN delete(int number)
 	{
 		if(tmp->next == NULL)
 		{
-			printf("HERE\n");
-			free(tmp);
-			tmp = NULL;
-			printf("%d\n", tmp == NULL);
+			Node* n = head;
+			while(n->next != tmp)
+			{
+				n = n->next;
+			}
+
+			n->next = NULL;
 			printf("NUMBER WAS DELETED\n");
                 	return true;
 		}
