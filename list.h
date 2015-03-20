@@ -6,5 +6,15 @@ typedef struct Node {
 	struct Node* next;
 }Node;
 
+typedef enum { false, true } BOOLEAN;
+
 extern Node* head;
 
+
+void add(int);
+
+void prettyPrint();
+
+BOOLEAN delete(int);
+
+struct Node* find(int);
