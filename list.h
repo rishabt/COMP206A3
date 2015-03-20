@@ -9,12 +9,12 @@ typedef struct Node {
 typedef enum { false, true } BOOLEAN;
 
 extern Node* head;
+extern Node* curr;
 
-
-void add(int);
+void add(int number);
 
 void prettyPrint();
 
-BOOLEAN delete(int);
+BOOLEAN delete(int number);
 
-struct Node* find(int);
+struct Node* find(int number);

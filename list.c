@@ -1,11 +1,18 @@
 #include "list.h"
 
 Node* head;
+Node* curr;
+
+void add(int number){
+	Node* n = malloc(sizeof(int) + sizeof(Node*));
+	curr->next = n;
+	curr = n;
+}
 
 int main(){
 
-	head = malloc(sizeof(int) + sizeof(Node*));	
-	head->value = 5;
-	printf("%d", head->value);
+	curr = malloc(sizeof(int) + sizeof(Node*));	
+	curr->value = 5;
+	printf("%d", curr->value);
 	return 0;
 }
