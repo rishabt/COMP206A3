@@ -1,4 +1,5 @@
 #include "list.h"
+#include<string.h>
 
 Node* head;
 Node* curr;
@@ -22,18 +23,47 @@ int main()
 
 	int i;
 	char ch;
-
+	int l = 0;
+	char c[256];
 	while((ch = fgetc(fp)) != EOF)
 	{
 		i = ch - '0';
 		if(i != -38)
 		{
-			add(i);
+			c[l] = ch;
+			l++;
+			continue;
+		}
+		else
+		{
+			c[l] = '\0';
 		}
 
+		int val = atoi(c);
+		c[0] = '\0';
+		l = 0;
+
+		add(val);
 	}
 
+	printf("The contents of the file as stored in linekd list are:\n");
 	prettyPrint();
+
+	char ans[3] = "Y";
+	while(strcmp(ans, "Y") == 0 || strcmp(ans, "y") == 0 || strcmp(ans, "YES") == 0 || strcmp(ans, "yes") == 0 || strcmp(ans, "Yes") == 0)
+	{
+		printf("Enter the number to delete: ");
+		int n;
+		scanf("%d", &n);
+
+		delete(n);
+
+		printf("Contents of the list are now: \n");
+		prettyPrint();
+
+		printf("Do you want to delete another number?: ");
+		scanf("%s", &ans[0]);
+	}
 
 	fclose(fp);
 	return 0;
