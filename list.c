@@ -1,10 +1,18 @@
 #include "list.h"
 
-Node* head;
-Node* curr;
+//Node* head;
+//Node* curr;
 
 void add(int number)
 {
+
+	if(head == NULL)
+	{
+		head = malloc(sizeof(int) + sizeof(Node*));
+		head->value = number;
+		return;
+	}
+
 	if(curr == NULL)
 	{
 		curr = malloc(sizeof(int) + sizeof(Node*));
@@ -92,7 +100,7 @@ BOOLEAN delete(int number)
 	return false;
 }
 
-
+/*
 int main()
 {
 
@@ -119,3 +127,4 @@ int main()
 	//printf("%d", curr->value);
 	return 0;
 }
+*/
