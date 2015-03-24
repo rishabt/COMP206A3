@@ -30,7 +30,7 @@ int main()
 		i = ch - '0';
 		if(i != -38)
 		{
-			c[l] = ch;
+			c[l] = ch;				// If number > 9 then we need to read each character of the line and append it
 			l++;
 			continue;
 		}
